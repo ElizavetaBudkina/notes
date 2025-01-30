@@ -1,7 +1,6 @@
-package org.example.notes.domain.dto;
+package org.example.notes.domain.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.example.notes.domain.entity.User;
 import org.example.notes.domain.enums.PriorityTask;
 import org.example.notes.domain.enums.StatusTask;
 
@@ -15,8 +14,8 @@ public record TaskResponseDto(
     String description,
     StatusTask status,
     PriorityTask priority,
-    UserForTaskResponseDto reporter,
-    UserForTaskResponseDto assignee,
+    UserResponseDto reporter,
+    UserResponseDto assignee,
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
     LocalDateTime dateTime
 ) { }

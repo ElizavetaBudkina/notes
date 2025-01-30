@@ -1,24 +1,19 @@
 package org.example.notes.service;
 
-import org.example.notes.domain.dto.TasksRequestDto;
-import org.example.notes.domain.dto.TasksResponseDto;
+import org.example.notes.domain.dto.request.TaskRequestDto;
+import org.example.notes.domain.dto.response.TaskResponseDto;
 
+import java.util.List;
 import java.util.UUID;
 
-public interface TasksService {
+public interface TaskService {
 
-    void save(TasksRequestDto tasksRequestDto);
+    void save(TaskRequestDto taskRequestDto);
 
-    void update(TasksRequestDto tasksRequestDto);
+    void delete(UUID id);
 
-    void delete(TasksRequestDto tasksRequestDto);
+    List<TaskResponseDto> findAll();
 
-    void updateByStatus(TasksRequestDto tasksRequestDto);
-
-    void updateByAssignee(TasksRequestDto tasksRequestDto);
-
-    TasksResponseDto findAll();
-
-    TasksResponseDto findById(UUID id);
+    TaskResponseDto findById(UUID id);
 
 }

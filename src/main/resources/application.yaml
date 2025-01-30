@@ -1,1 +1,18 @@
-spring.application.name=notes
+spring:
+  application:
+    name: notes
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tasks_db
+    username: tasks_admin
+    password: tasks_password
+    driverClassName: org.postgresql.Driver
+  sql:
+    init:
+      platform: postgres
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+server:
+  port: 8081
